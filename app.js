@@ -1,5 +1,5 @@
 // import functions and grab DOM elements
-
+import pokemon from './Data/pokemon.js';
 // initialize global state
 
 // set event listeners 
