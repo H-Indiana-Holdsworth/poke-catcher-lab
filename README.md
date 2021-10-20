@@ -1,25 +1,48 @@
-# Alchemy Bootstrap Template
+# Pokéman Plan
 
-## Making a plan
+## File layout
+* Home page (root directory)
+    * index.hmtl
+    * app.js
+* Results page (/results directory)
+    * index.html
+    * results.js
+* Data folder
+    * storage-utils.js-- holds localstorage fxns
+    * fruit.js -- holds the data
 
-(bolded steps are mandatory, unbolded are for more advanced projects)
+## HTML Elements
+* Home page with
+    * 3 images as radio buttons displayed side by side
+    * button with id of select-pokemon
+* Empty results page
 
-1) **Make a drawing of your app. Simple "wireframes"**
-2) **Once you have a drawing, name the HTML elements you'll need to realize your vision**
-3) **For each HTML element ask: Why do I need this?**
-4) Ask which of out HTML elements are hard coded, and which are dynamically generated?
-5) **Once we know _why_ we need each element, think about how to implement the "Why" as a "How"**
-6) Is there some state we need to initialize?
-7) **Find all the 'events' (user clicks, form submit, on load etc) in your app. Ask one by one, "What happens when" for each of these events. Does any state change?**
-8) **Think about how to validate each of your steps**
-9) Ask: should any of this work be abstracted into functions? (i.e., is the work complicated? can it be resused?)
-10) Consider your data model. What objects will you be using? What are the key/value pairs? What arrays do you need? What needs to live in local storage?
-11) **Consider what features _depend_ on what other features. Use this dependency logic to figure out what order to complete tasks.**
+## localStorage fxns
+```javascript
+const results = [
+    { id: 'poke1', shown: 2, picked: 2 },
+    { id: 'poke2', shown: 2, picked: 1 },
+    { id: 'poke3', shown: 2, picked: 1 }
+]
+```
+* getPokedex -- return the results array or empty array
+* capturePokemon -- increment the captured key for a pokemon
+* encounterPokemon -- increment the encountered key for a pokemon
 
+## app.js logic
+* make fxn called generatePokemon()
+    * generate 3 random pokemon
+    * call encounterPokemon for each
+    * render the pokemon on the page
 
-## To Run Cypress Tests
-* `npm install`
-* `npm test`
-* Cypress will open -- you should then click "run <#> integration spec(s)"
-    ![](cypress.png)
-* Make sure all tests pass
+## On page load
+* set totalPlays to 0
+* call generatePokemon()
+
+## On button click
+* increment total plays
+* call capturePokemon with chosen pokemon 
+* if total plays >= 10
+    * redirect to results
+* else
+    * call generatePokemon()
