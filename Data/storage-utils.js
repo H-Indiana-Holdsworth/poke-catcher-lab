@@ -21,9 +21,9 @@ export function setPokedex(id){
     const pokedex = getPokedex();
     const pokeItem = findById(id, pokedex);
     if (pokeItem) {
-        pokeItem.qty++;
+        pokeItem.encounter++;
     } else {
-        const newItem = { id: id, qty: 1 };
+        const newItem = { id: id, encounter: 1, caught: 0 };
         pokedex.push(newItem);
     }
     const dexString = JSON.stringify(pokedex);

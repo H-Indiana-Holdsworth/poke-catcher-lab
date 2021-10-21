@@ -78,18 +78,19 @@ test('getPokedex should return the pokedex if it exists', (expect)=>{
 });
 
 test('setPokedex should increment the quantity of the item in the id', (expect)=>{
+    localStorage.removeItem('POKEDEX');
     // arrange
     const fakeDex = [
-        { id: '1', qty: 1 },
-        { id: '2', qty: 2 }
+        { 'id': 1, encounter: 1, caught: 0 },
+        { 'id': 2, encounter: 1, caught: 0 }
     ];
-    localStorage.setItem('CART', JSON.stringify(fakeDex));
+    localStorage.setItem('POKEDEX', JSON.stringify(fakeDex));
     // act
-    setPokedex('1');
+    setPokedex(1);
     const pokedex = getPokedex();
     const expected = [
-        { id: '1', qty: 2 },
-        { id: '2', qty: 2 }
+        { 'id': 1, encounter: 2, caught: 0 },
+        { 'id': 2, encounter: 1, caught: 0 }
     ];
     // assert
     expect.deepEqual(pokedex, expected);
