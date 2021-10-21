@@ -12,10 +12,15 @@ body {
     align-items: center;
 }
 
-input[type="radio"]:checked {
+input {
     display: none;
 }
 
-.pokemon-button {
+.pokemon-choice {
     margin: 10px;
+}
+
+img {
+    height: 200px;
+    width: 200px;
 }

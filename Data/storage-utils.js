@@ -17,15 +17,30 @@ export function getPokedex(){
     return pokedex;
 }
 
-export function setPokedex(id){
+export function encounterPokemon(id){
     const pokedex = getPokedex();
     const pokeItem = findById(id, pokedex);
+
     if (pokeItem) {
         pokeItem.encounter++;
     } else {
         const newItem = { id: id, encounter: 1, caught: 0 };
         pokedex.push(newItem);
     }
+
     const dexString = JSON.stringify(pokedex);
     localStorage.setItem('POKEDEX', dexString);
+}
+
+export function capturePokemon(id){
+    const pokedex = getPokedex();
+    const pokeItem = findById(id, pokedex);
+
+    if (pokeItem) {
+        pokeItem.capture++;
+    }
+
+    const dexString = JSON.stringify(pokedex);
+    localStorage.setItem('POKEDEX', dexString);
+
 }
