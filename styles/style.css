@@ -12,6 +12,10 @@ body {
     align-items: center;
 }
 
+input[type="radio"]:checked {
+    display: none;
+}
+
 .pokemon-button {
     margin: 10px;
 }
