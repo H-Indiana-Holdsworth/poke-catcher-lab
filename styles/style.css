@@ -5,13 +5,30 @@ body {
     align-items: center;
 }
 
-.pokemon {
+.pokemon-option {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
 }
 
-.pokemon-button {
+input {
+    display: none;
+}
+
+input[type=radio]:checked + img {
+    border: 3px solid red;
+}
+
+input[type=radio] + img {
+    border: 3px solid black;
+}
+
+.pokemon-choice {
     margin: 10px;
+}
+
+img {
+    height: 200px;
+    width: 200px;
 }

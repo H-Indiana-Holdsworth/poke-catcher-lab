@@ -18,6 +18,9 @@
 
       return {
         setItem: function (key, value) {
+          if (typeof value !== 'string') {
+            value = String(value);
+          }
           storage[key] = value || '';
         },
         getItem: function (key) {
