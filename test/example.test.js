@@ -1,7 +1,7 @@
 // IMPORT MODULES under test here:
 // import { example } from '../example.js';
 // import pokemon from '../data/pokemon.js';
-import pokemon from '../data/pokemon.js';
+import pokemon from '../Data/pokemon.js';
 import { getPokedex, encounterPokemon, findById, capturePokemon } from '../data/storage-utils.js';
 
 const test = QUnit.test;
