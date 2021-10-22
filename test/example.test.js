@@ -2,7 +2,7 @@
 // import { example } from '../example.js';
 // import pokemon from '../data/pokemon.js';
 import pokemon from '../data/pokemon.js';
-import { getPokedex, encounterPokemon, findById, capturePokemon } from '../data/storage-utils.js';
+import { getPokedex, encounterPokemon, findById, capturePokemon, setPokedex } from '../data/storage-utils.js';
 
 const test = QUnit.test;
 
@@ -75,6 +75,22 @@ test('getPokedex should return the pokedex if it exists', (expect)=>{
     const pokedex = getPokedex();
     //assert
     expect.deepEqual(pokedex, fakeDex);
+});
+
+test('setPokedex should put the pokedex into local storage', (expect)=>{
+    localStorage.removeItem('POKEDEX');
+    // arrange
+    const expected = [
+        { 'id': 1, 'pokemon': 'bulbasaur', encountered: 1, captured: 1 },
+        { 'id': 2, 'pokemon': 'ivysaur', encountered: 2, captured: 2 }
+    ];
+
+    // act
+    setPokedex(expected);
+    const actual = getPokedex();
+    
+    // expect
+    expect.deepEqual(actual, expected);
 });
 
 test('encounterPokemon should increment the encounter quantity of the item in the id', (expect)=>{
