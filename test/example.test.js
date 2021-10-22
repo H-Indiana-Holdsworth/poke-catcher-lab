@@ -81,16 +81,16 @@ test('encounterPokemon should increment the encounter quantity of the item in th
     localStorage.removeItem('POKEDEX');
     // arrange
     const fakeDex = [
-        { 'id': 1, encounter: 1, caught: 0 },
-        { 'id': 2, encounter: 1, caught: 0 }
+        { 'id': 1, encounter: 1, capture: 0 },
+        { 'id': 2, encounter: 1, capture: 0 }
     ];
     localStorage.setItem('POKEDEX', JSON.stringify(fakeDex));
     // act
     encounterPokemon(1);
     const pokedex = getPokedex();
     const expected = [
-        { 'id': 1, encounter: 2, caught: 0 },
-        { 'id': 2, encounter: 1, caught: 0 }
+        { 'id': 1, encounter: 2, capture: 0 },
+        { 'id': 2, encounter: 1, capture: 0 }
     ];
     // assert
     expect.deepEqual(pokedex, expected);
