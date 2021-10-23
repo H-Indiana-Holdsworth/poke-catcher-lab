@@ -46,3 +46,16 @@ const results = [
     * redirect to results
 * else
     * call generatePokemon()
+
+## Results page
+### HTML Elements
+For each item in the results
+* Image
+* header with the name of the pokemon 
+* display times encountered and captured
+
+### results.js
+* get the data from local storage
+* loop through each item in the results
+* get its data from pokemon.js (using findById)
+* render the results (img, header, data)
