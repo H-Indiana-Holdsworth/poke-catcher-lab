@@ -3,6 +3,15 @@ body {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    background-image: url('../assets/pokemon-field.jpeg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+h1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .pokemon-option {
@@ -18,10 +27,13 @@ input {
 
 input[type=radio]:checked + img {
     border: 3px solid red;
+    border-radius: 50%;
+    padding: 10px;
 }
 
 input[type=radio] + img {
     border: 3px solid black;
+    border-radius: 50%;
 }
 
 .pokemon-choice {
@@ -29,6 +41,12 @@ input[type=radio] + img {
 }
 
 img {
-    height: 200px;
-    width: 200px;
+    height: 300px;
+    width: 300px;
+}
+
+#select-pokemon {
+    border-radius: 50%;
+    box-shadow: brown;
+    size: 50px;
 }
