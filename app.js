@@ -21,8 +21,8 @@ const generatePokemon = () =>{
     // regenerate if any of them match
     while (
         randNum1 === randNum2 ||
-      randNum1 === randNum3 ||
-      randNum2 === randNum3 
+        randNum1 === randNum3 ||
+        randNum2 === randNum3 
     ) {
         randNum1 = Math.floor(Math.random() * pokemon.length);
         randNum2 = Math.floor(Math.random() * pokemon.length);
